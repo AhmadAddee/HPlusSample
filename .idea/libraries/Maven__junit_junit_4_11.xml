@@ -2,7 +2,7 @@
   <library name="Maven: junit:junit:4.11">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40" />
+      <root url="jar://$PROJECT_DIR$/../../../../../MyPrograms/mysql-connector-java-8.0.30.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-javadoc.jar!/" />
@@ -10,6 +10,5 @@
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/" />
     </SOURCES>
-    <jarDirectory url="file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40" recursive="false" />
   </library>
 </component>
