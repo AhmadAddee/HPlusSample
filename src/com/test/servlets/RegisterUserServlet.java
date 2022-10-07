@@ -17,7 +17,9 @@ import java.text.MessageFormat;
 public class RegisterUserServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // collect all form data
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String firstName = req.getParameter("fname");
@@ -25,35 +27,49 @@ public class RegisterUserServlet extends HttpServlet {
         String activity = req.getParameter("activity");
         int age = Integer.parseInt(req.getParameter("age"));
 
+
+        // fill it up in a User bean
         User user = new User(username, password, firstName, lastName, age, activity);
 
+
+
+        // call DAO layer and save the user object to DB
         ApplicationDao dao = new ApplicationDao();
         int rows = dao.registerUser(user);
 
+
+        // prepare an information message for user about the success or failure of the operation
         String infoMessage = null;
-        if (rows == 0){
-            infoMessage = "Sorry, an error occurred!";
-        }else {
-            infoMessage = "User registered successfully";
+        if(rows==0){
+            infoMessage="Sorry, an error occurred!";
+        }
+        else{
+            infoMessage="User registered successfully!";
         }
 
+        // write the message back to the page in client browser\
         String page = getHTMLString(req.getServletContext().getRealPath("/html/register.html"), infoMessage);
-        res.getWriter().write(page);
+        resp.getWriter().write(page);
+
+
     }
 
-    public String getHTMLString(String filePath, String message) throws IOException {
+    public String getHTMLString(String filePath, String message) throws IOException{
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
-        String line = "";
+        String line="";
         StringBuffer buffer = new StringBuffer();
-        while ((line= reader.readLine()) != null){
+        while((line=reader.readLine())!=null){
             buffer.append(line);
         }
+
         reader.close();
         String page = buffer.toString();
 
         page = MessageFormat.format(page, message);
 
         return page;
+
+
     }
 
     @Override

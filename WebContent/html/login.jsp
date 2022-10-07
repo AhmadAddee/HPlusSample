@@ -8,9 +8,6 @@
 <meta charset="ISO-8859-1">
 <title>H+ Sport</title>
 
-
-
-
 </head>
 <body>
 	<header id="home" class="header">
@@ -38,17 +35,19 @@
 	<!-- #home -->
 
 
-
 	<section>
-	
-	<%=displayDate()%>
+		<!-- displays date and time for today -->
+		<%=displayDate()%>
 	</section>
 	<section id="login" class="section">
 		<div class="container tagline">
-			<% if(request.getAttribute("error")!=null){ %>
-			<em><%=request.getAttribute("error")%></em><br />
-			<%} %>
-
+			<%
+				if (request.getAttribute("error") != null) {
+			%>
+			<%=request.getAttribute("error")%><br />
+			<%
+				}
+			%>
 			<em>LOGIN USER</em>
 			<form action="login" method="post">
 				<label>Username</label> <input type="text" name="username"
@@ -86,14 +85,10 @@
 		<!-- container -->
 	</footer>
 	<!-- footer -->
-<%!
-
-public String displayDate(){
-	SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-mm-dd hh:mm");
-	Date toDate = Calendar.getInstance().getTime();
-	return dateFormat.format(toDate);
-}
-
-%>
+	<%!public String displayDate() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd hh:mm");
+		Date date = Calendar.getInstance().getTime();
+		return dateFormat.format(date);
+	}%>
 </body>
 </html>

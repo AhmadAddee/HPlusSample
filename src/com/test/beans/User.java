@@ -8,6 +8,7 @@ public class User {
     private int age;
     private String activity;
 
+
     public User(String username, String password, String firstName, String lastName, int age, String activity) {
         this.username = username;
         this.password = password;
@@ -17,8 +18,8 @@ public class User {
         this.activity = activity;
     }
 
-    public User(){
-
+    public User() {
+        // TODO Auto-generated constructor stub
     }
 
     public String getPassword() {
