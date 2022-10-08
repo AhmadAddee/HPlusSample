@@ -12,7 +12,7 @@
 
 <tag>
 <name>formatDate</name>
-<tag-class>com.test.customtags.AppHandler</tag-class>
+<tag-class>com.test.costumtags.AppHandler</tag-class>
 <attribute>
 <name>date</name>
 <rtexprvalue>true</rtexprvalue>

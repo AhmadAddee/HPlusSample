@@ -7,6 +7,10 @@
       </list>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="http://java.sun.com/xml/j2ee" location="$PROJECT_DIR$" />
+    <resource url="http://java.sun.com/xml/ns/javaee" location="$USER_HOME$/AppData/Local/JetBrains/IdeaIC2021.2/extResources/beee9943_web-app_3_0.xsd" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17 (3)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
